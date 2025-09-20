@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=3 uid="uid://snyb8wpdvljk"]
+
+[ext_resource type="Script" uid="uid://c4ffo05oa6r6y" path="res://script/game_ui.gd" id="1_oqkmy"]
+[ext_resource type="FontFile" uid="uid://iypkrxy25ib3" path="res://assets/Jersey15-Regular.ttf" id="2_i2w61"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a176c"]
+font = ExtResource("2_i2w61")
+font_size = 46
+
+[sub_resource type="LabelSettings" id="LabelSettings_oqkmy"]
+font = ExtResource("2_i2w61")
+font_size = 46
+
+[sub_resource type="LabelSettings" id="LabelSettings_hpuv8"]
+font = ExtResource("2_i2w61")
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_i2w61"]
+font = ExtResource("2_i2w61")
+font_size = 46
+
+[node name="GameUi" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_oqkmy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_scale = 129.205
+
+[node name="ProgressLabel" type="Label" parent="CanvasLayer"]
+offset_left = 19.0
+offset_top = 11.0
+offset_right = 156.0
+offset_bottom = 61.0
+text = "Progress:"
+label_settings = SubResource("LabelSettings_a176c")
+autowrap_mode = 2
+
+[node name="ProgressValue" type="Label" parent="CanvasLayer"]
+offset_left = 192.0
+offset_top = 14.0
+offset_right = 279.0
+offset_bottom = 91.0
+text = "0"
+label_settings = SubResource("LabelSettings_oqkmy")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 1018.0
+offset_top = 521.0
+offset_right = 1118.0
+offset_bottom = 602.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Button"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 21.0
+offset_right = 100.0
+offset_bottom = 68.0
+text = "Pause"
+label_settings = SubResource("LabelSettings_hpuv8")
+
+[node name="Timer(minutes)" type="Label" parent="CanvasLayer"]
+offset_left = 1029.0
+offset_top = 21.0
+offset_right = 1121.0
+offset_bottom = 104.0
+text = "0"
+label_settings = SubResource("LabelSettings_i2w61")
+
+[node name="Divider" type="Label" parent="CanvasLayer"]
+offset_left = 1055.0
+offset_top = 17.0
+offset_right = 1147.0
+offset_bottom = 100.0
+text = ":"
+label_settings = SubResource("LabelSettings_i2w61")
+
+[node name="Timer(seconds)" type="Label" parent="CanvasLayer"]
+offset_left = 1071.0
+offset_top = 21.0
+offset_right = 1163.0
+offset_bottom = 104.0
+text = "00"
+label_settings = SubResource("LabelSettings_i2w61")
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

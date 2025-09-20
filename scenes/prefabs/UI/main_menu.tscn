@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://cl4qrid33w5wp"]
+
+[ext_resource type="Script" uid="uid://e5t435w7x3ot" path="res://script/main_menu.gd" id="1_lf4j1"]
+[ext_resource type="FontFile" uid="uid://iypkrxy25ib3" path="res://assets/Jersey15-Regular.ttf" id="2_lggog"]
+[ext_resource type="Texture2D" uid="uid://cmhst2e3g8ild" path="res://assets/setting.png" id="3_3tok1"]
+[ext_resource type="Texture2D" uid="uid://uhkihqnbubnp" path="res://assets/icons8-about-48.png" id="4_n767m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sij0g"]
+font = ExtResource("2_lggog")
+font_size = 70
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yma1n"]
+font = ExtResource("2_lggog")
+font_size = 60
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lf4j1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="CanvasLayer"]
+offset_left = 238.0
+offset_top = 85.0
+offset_right = 964.0
+offset_bottom = 156.0
+text = "Color changing platform"
+label_settings = SubResource("LabelSettings_sij0g")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Start" type="Button" parent="CanvasLayer"]
+offset_left = 455.0
+offset_top = 292.0
+offset_right = 734.0
+offset_bottom = 412.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Start"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 6.0
+offset_right = 254.0
+offset_bottom = 110.0
+text = "Start"
+label_settings = SubResource("LabelSettings_yma1n")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Settings" type="Button" parent="CanvasLayer"]
+offset_left = 26.0
+offset_top = 571.0
+offset_right = 101.0
+offset_bottom = 632.0
+icon = ExtResource("3_3tok1")
+icon_alignment = 1
+expand_icon = true
+
+[node name="About" type="Button" parent="CanvasLayer"]
+offset_left = 1043.0
+offset_top = 577.0
+offset_right = 1116.0
+offset_bottom = 635.0
+icon = ExtResource("4_n767m")
+icon_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/About" to="." method="_on_about_pressed"]
