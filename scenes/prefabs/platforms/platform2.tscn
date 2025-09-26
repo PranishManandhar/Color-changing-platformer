@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://eyr5njghugir"]
+[gd_scene load_steps=4 format=3 uid="uid://eyr5njghugir"]
+
+[ext_resource type="Script" uid="uid://dx82o5puogx4l" path="res://script/Blocks.gd" id="1_lqn3x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhjmk"]
 size = Vector2(273, 40)
 
-[node name="Platform" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hq1e"]
+size = Vector2(274, 7)
+
+[node name="Platform" type="Node2D" groups=["Blocks", "blue_platform"]]
 
 [node name="ColorRect" type="ColorRect" parent="." groups=["blue_platform"]]
 offset_left = -123.0
@@ -19,3 +24,10 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" groups=["blue_platform"]]
 position = Vector2(13, 1)
 shape = SubResource("RectangleShape2D_vhjmk")
+
+[node name="ScoreTrigger" type="Area2D" parent="."]
+script = ExtResource("1_lqn3x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreTrigger"]
+position = Vector2(14, -22.5)
+shape = SubResource("RectangleShape2D_2hq1e")

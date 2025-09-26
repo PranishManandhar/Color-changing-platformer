@@ -27,8 +27,8 @@ project/assembly_name="color change Platform"
 
 [global_group]
 
-red_platform=""
-blue_platform=""
+Blocks=""
+Player=""
 
 [input]
 

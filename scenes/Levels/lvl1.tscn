@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmb58iqj8tceg"]
+[gd_scene load_steps=8 format=3 uid="uid://dmb58iqj8tceg"]
 
+[ext_resource type="Script" uid="uid://0ysxsv7cd1f8" path="res://script/ScoreManager.gd" id="1_dy0bh"]
 [ext_resource type="PackedScene" uid="uid://t6g22c1q0kb8" path="res://scenes/prefabs/player.tscn" id="1_n2c12"]
 [ext_resource type="PackedScene" uid="uid://cmvea2mklkfsb" path="res://scenes/prefabs/platforms/platform1.tscn" id="2_dy0bh"]
 [ext_resource type="PackedScene" uid="uid://cr1cmtl3pk44e" path="res://scenes/prefabs/flags/flag_pole_end.tscn" id="4_n8hkh"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://snyb8wpdvljk" path="res://scenes/prefabs/UI/GameUI.tscn" id="7_n2c12"]
 
 [node name="LVL1" type="Node2D"]
+script = ExtResource("1_dy0bh")
 
 [node name="Player" parent="." instance=ExtResource("1_n2c12")]
 position = Vector2(-801, 189)
