@@ -1,4 +1,7 @@
-extends Control	
+extends Control
+@onready var score_value:=$CanvasLayer/ProgressValue
+func _physics_process(delta: float) -> void:
+	score_value.text = str(Global.score)
 
 func _on_button_pressed() -> void:
 	

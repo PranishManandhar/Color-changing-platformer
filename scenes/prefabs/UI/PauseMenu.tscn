@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b004jp7cl1frr"]
 
-[ext_resource type="Script" uid="uid://c1qwnw1xolj5b" path="res://script/pause_menu.gd" id="1_d0m0u"]
+[ext_resource type="Script" uid="uid://c1qwnw1xolj5b" path="res://script/UI/pause_menu.gd" id="1_d0m0u"]
 [ext_resource type="FontFile" uid="uid://iypkrxy25ib3" path="res://assets/Jersey15-Regular.ttf" id="2_2r6so"]
 [ext_resource type="LabelSettings" uid="uid://nnb6obldfvup" path="res://assets/label assets/label settings.tres" id="3_bbi7a"]
 

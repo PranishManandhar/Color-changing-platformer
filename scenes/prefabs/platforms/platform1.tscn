@@ -1,14 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmvea2mklkfsb"]
-
-[ext_resource type="Script" uid="uid://dx82o5puogx4l" path="res://script/Blocks.gd" id="1_2had5"]
+[gd_scene load_steps=2 format=3 uid="uid://cmvea2mklkfsb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhjmk"]
 size = Vector2(273, 42)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmv47"]
-size = Vector2(274, 7)
-
-[node name="Platform" type="Node2D" groups=["Blocks", "red_platform"]]
+[node name="Platform" type="Node2D" groups=["red_platform"]]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -123.0
@@ -22,12 +17,3 @@ color = Color(0.885556, 0, 0.0586454, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" groups=["red_platform"]]
 position = Vector2(13, 1)
 shape = SubResource("RectangleShape2D_vhjmk")
-
-[node name="ScoreTrigger" type="Area2D" parent="."]
-script = ExtResource("1_2had5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreTrigger"]
-position = Vector2(14, -22.5)
-shape = SubResource("RectangleShape2D_bmv47")
-
-[connection signal="body_entered" from="ScoreTrigger" to="ScoreTrigger" method="_on_body_entered"]

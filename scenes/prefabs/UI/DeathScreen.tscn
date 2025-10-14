@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=3 uid="uid://s1l244c3j514"]
+
+[ext_resource type="Script" uid="uid://bhecvs02kbgee" path="res://script/UI/death_screen.gd" id="1_mo8c8"]
+[ext_resource type="FontFile" uid="uid://iypkrxy25ib3" path="res://assets/Jersey15-Regular.ttf" id="2_tylaj"]
+[ext_resource type="Texture2D" uid="uid://dsps1nlh1y84o" path="res://assets/Star.png" id="4_k5bhw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7rktd"]
+font = ExtResource("2_tylaj")
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_mo8c8"]
+font = ExtResource("2_tylaj")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_tylaj"]
+font = ExtResource("2_tylaj")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_k5bhw"]
+font = ExtResource("2_tylaj")
+font_size = 60
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_twtq6"]
+font = ExtResource("2_tylaj")
+font_size = 50
+
+[node name="DeathScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mo8c8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 71.0
+offset_top = 31.0
+offset_right = 1066.0
+offset_bottom = 597.0
+
+[node name="title" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 19.0
+offset_right = 651.0
+offset_bottom = 120.0
+text = "You Died"
+label_settings = SubResource("LabelSettings_7rktd")
+autowrap_mode = 2
+
+[node name="quote" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 136.0
+offset_right = 825.0
+offset_bottom = 237.0
+text = "\"wisdom ran after you but you were always faster\""
+label_settings = SubResource("LabelSettings_mo8c8")
+autowrap_mode = 2
+
+[node name="Score" type="Sprite2D" parent="CanvasLayer/Panel"]
+position = Vector2(444, 227)
+scale = Vector2(1.32812, 1.3125)
+texture = ExtResource("4_k5bhw")
+
+[node name="ScoreNo" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 206.0
+offset_right = 623.0
+offset_bottom = 311.0
+text = "1600"
+label_settings = SubResource("LabelSettings_tylaj")
+autowrap_mode = 2
+
+[node name="Retry" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 278.0
+offset_right = 631.0
+offset_bottom = 358.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Retry"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 6.0
+offset_right = 256.0
+offset_bottom = 67.0
+text = "Retry"
+label_settings = SubResource("LabelSettings_k5bhw")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="give up" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 381.0
+offset_right = 635.0
+offset_bottom = 461.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/give up"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = -3.0
+offset_right = 258.0
+offset_bottom = 77.0
+text = "Yep i give up"
+label_settings = SubResource("LabelSettings_twtq6")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="CanvasLayer/Panel/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/give up" to="." method="_on_give_up_pressed"]

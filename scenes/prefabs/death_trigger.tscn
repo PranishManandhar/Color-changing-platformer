@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b7wsfrh3jmh10"]
 
-[ext_resource type="Script" uid="uid://bfstotrj0fc6r" path="res://script/death_trigger.gd" id="1_ic6x3"]
+[ext_resource type="Script" uid="uid://bfstotrj0fc6r" path="res://script/player/death_trigger.gd" id="1_ic6x3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n2c12"]
 distance = -117.0

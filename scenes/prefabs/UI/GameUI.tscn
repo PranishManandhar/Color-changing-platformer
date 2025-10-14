@@ -1,11 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://snyb8wpdvljk"]
 
-[ext_resource type="Script" uid="uid://c4ffo05oa6r6y" path="res://script/game_ui.gd" id="1_oqkmy"]
+[ext_resource type="Script" uid="uid://c4ffo05oa6r6y" path="res://script/UI/game_ui.gd" id="1_oqkmy"]
+[ext_resource type="Texture2D" uid="uid://dsps1nlh1y84o" path="res://assets/Star.png" id="2_hpuv8"]
 [ext_resource type="FontFile" uid="uid://iypkrxy25ib3" path="res://assets/Jersey15-Regular.ttf" id="2_i2w61"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_a176c"]
-font = ExtResource("2_i2w61")
-font_size = 46
 
 [sub_resource type="LabelSettings" id="LabelSettings_oqkmy"]
 font = ExtResource("2_i2w61")
@@ -27,20 +24,15 @@ script = ExtResource("1_oqkmy")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_scale = 129.205
 
-[node name="ProgressLabel" type="Label" parent="CanvasLayer"]
-offset_left = 19.0
-offset_top = 11.0
-offset_right = 156.0
-offset_bottom = 61.0
-text = "Progress:"
-label_settings = SubResource("LabelSettings_a176c")
-autowrap_mode = 2
+[node name="ProgressLabel" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(53, 29)
+texture = ExtResource("2_hpuv8")
 
 [node name="ProgressValue" type="Label" parent="CanvasLayer"]
-offset_left = 192.0
-offset_top = 14.0
-offset_right = 279.0
-offset_bottom = 91.0
+offset_left = 83.0
+offset_top = 5.0
+offset_right = 170.0
+offset_bottom = 82.0
 text = "0"
 label_settings = SubResource("LabelSettings_oqkmy")
 

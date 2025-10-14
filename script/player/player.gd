@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		color_state = "blue" if color_state == "red" else "red"
 		$ColorRect.color = color_state
-	
+
 	if color_state == "red":
 		set_collision_mask_value(1,true)
 		set_collision_mask_value(2,false)

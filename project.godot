@@ -16,6 +16,10 @@ run/main_scene="uid://cl4qrid33w5wp"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://script/Global.gd"
+
 [display]
 
 window/stretch/mode="viewport"
@@ -25,10 +29,14 @@ window/stretch/aspect="expand"
 
 project/assembly_name="color change Platform"
 
+[editor]
+
+version_control/autoload_on_startup=true
+
 [global_group]
 
-Blocks=""
 Player=""
+death_screens=""
 
 [input]
 
