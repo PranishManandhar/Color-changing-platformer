@@ -1,4 +1,4 @@
 1) since global variable is used via a global script the score stays same if player plays different levels simultaneously
-2)game needs music
-3) game needsa settings menu and a game end menu
-4)game needs 7 more levels
+2) game needs music
+3) game needs a settings menu and a game end menu
+4) game needs 7 more levels

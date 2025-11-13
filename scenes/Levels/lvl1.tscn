@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://dmb58iqj8tceg"]
 
-[ext_resource type="PackedScene" uid="uid://t6g22c1q0kb8" path="res://scenes/prefabs/player.tscn" id="1_n2c12"]
+[ext_resource type="PackedScene" uid="uid://t6g22c1q0kb8" path="res://scenes/prefabs/Misc/player.tscn" id="1_n2c12"]
 [ext_resource type="PackedScene" uid="uid://cmvea2mklkfsb" path="res://scenes/prefabs/platforms/platform1.tscn" id="2_dy0bh"]
 [ext_resource type="PackedScene" uid="uid://cr1cmtl3pk44e" path="res://scenes/prefabs/flags/flag_pole_end.tscn" id="4_n8hkh"]
-[ext_resource type="PackedScene" uid="uid://b7wsfrh3jmh10" path="res://scenes/prefabs/death_trigger.tscn" id="5_nhth8"]
+[ext_resource type="PackedScene" uid="uid://b7wsfrh3jmh10" path="res://scenes/prefabs/Misc/death_trigger.tscn" id="5_nhth8"]
 [ext_resource type="PackedScene" uid="uid://b5hkk6epxtelb" path="res://scenes/prefabs/platforms/NeutralPlatform.tscn" id="7_c40rl"]
-[ext_resource type="PackedScene" uid="uid://q84a0c85ybek" path="res://scenes/prefabs/star.tscn" id="7_dy0bh"]
+[ext_resource type="PackedScene" uid="uid://ciuqmj5d6414g" path="res://scenes/prefabs/Misc/coin.tscn" id="7_dy0bh"]
 [ext_resource type="PackedScene" uid="uid://snyb8wpdvljk" path="res://scenes/prefabs/UI/GameUI.tscn" id="7_n2c12"]
 
 [node name="LVL1" type="Node2D"]
@@ -26,19 +26,19 @@ offset_bottom = -419.0
 [node name="redplat" type="Node" parent="."]
 
 [node name="Node2D4" parent="redplat" instance=ExtResource("2_dy0bh")]
-position = Vector2(-53, 197)
+position = Vector2(-53, 206)
 
 [node name="Node2D5" parent="redplat" instance=ExtResource("2_dy0bh")]
-position = Vector2(653, 192)
+position = Vector2(650, 202)
 
 [node name="Platform" parent="redplat" instance=ExtResource("2_dy0bh")]
 position = Vector2(-394, 208)
 
 [node name="Platform2" parent="redplat" instance=ExtResource("2_dy0bh")]
-position = Vector2(300, 195)
+position = Vector2(300, 205)
 
 [node name="Platform3" parent="redplat" instance=ExtResource("2_dy0bh")]
-position = Vector2(1025, 192)
+position = Vector2(1025, 204)
 
 [node name="NeutralPlat" type="Node" parent="."]
 
@@ -46,7 +46,7 @@ position = Vector2(1025, 192)
 position = Vector2(-726, 206)
 
 [node name="NeutralPlatform2" parent="NeutralPlat" instance=ExtResource("7_c40rl")]
-position = Vector2(1376, 192)
+position = Vector2(1376, 204)
 
 [node name="Death-Trigger" parent="." instance=ExtResource("5_nhth8")]
 position = Vector2(-36, 345)
@@ -54,13 +54,13 @@ position = Vector2(-36, 345)
 [node name="Flags" type="Node" parent="."]
 
 [node name="FlagPole-End" parent="Flags" instance=ExtResource("4_n8hkh")]
-position = Vector2(1491, 182)
+position = Vector2(1491, 194)
 
-[node name="Star" parent="." instance=ExtResource("7_dy0bh")]
-position = Vector2(-39, 129)
+[node name="coin" parent="." instance=ExtResource("7_dy0bh")]
+position = Vector2(-41, 143)
 
-[node name="Star2" parent="." instance=ExtResource("7_dy0bh")]
-position = Vector2(664, -28)
+[node name="coin2" parent="." instance=ExtResource("7_dy0bh")]
+position = Vector2(287, -20)
 
-[node name="Star3" parent="." instance=ExtResource("7_dy0bh")]
-position = Vector2(1357, 123)
+[node name="coin3" parent="." instance=ExtResource("7_dy0bh")]
+position = Vector2(648, 138)

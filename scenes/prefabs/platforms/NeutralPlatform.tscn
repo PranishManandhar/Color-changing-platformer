@@ -3,7 +3,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1lw57"]
 size = Vector2(273, 41)
 
-[node name="NeutralPlatform" type="StaticBody2D"]
+[node name="NeutralPlatform" type="AnimatableBody2D"]
 collision_layer = 3
 collision_mask = 3
 

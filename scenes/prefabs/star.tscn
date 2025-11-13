@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://q84a0c85ybek"]
+[gd_scene load_steps=4 format=3 uid="uid://cc54kq5luiybg"]
 
 [ext_resource type="Texture2D" uid="uid://dsps1nlh1y84o" path="res://assets/Star.png" id="1_5y2va"]
-[ext_resource type="Script" uid="uid://ydaueaelptws" path="res://script/star.gd" id="1_po1s3"]
+[ext_resource type="Script" uid="uid://ydaueaelptws" path="res://script/coin.gd" id="1_po1s3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_po1s3"]
 size = Vector2(32, 54)

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c26pim07cssxm"]
+
+[ext_resource type="PackedScene" uid="uid://snyb8wpdvljk" path="res://scenes/prefabs/UI/GameUI.tscn" id="1_k1yv2"]
+[ext_resource type="PackedScene" uid="uid://t6g22c1q0kb8" path="res://scenes/prefabs/Misc/player.tscn" id="2_5duoi"]
+
+[node name="lvl3" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_5duoi")]
+position = Vector2(-1057, 245)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="GameUi" parent="Player/Camera2D" instance=ExtResource("1_k1yv2")]
+offset_left = 1140.0
+offset_top = 88.0
+offset_right = 1140.0
+offset_bottom = 88.0

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhecvs02kbgee" path="res://script/UI/death_screen.gd" id="1_mo8c8"]
 [ext_resource type="FontFile" uid="uid://iypkrxy25ib3" path="res://assets/Jersey15-Regular.ttf" id="2_tylaj"]
-[ext_resource type="Texture2D" uid="uid://dsps1nlh1y84o" path="res://assets/Star.png" id="4_k5bhw"]
+[ext_resource type="Texture2D" uid="uid://cg8ucc3f656ad" path="res://assets/coin/coin.png" id="3_mo8c8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7rktd"]
 font = ExtResource("2_tylaj")
@@ -64,9 +64,9 @@ label_settings = SubResource("LabelSettings_mo8c8")
 autowrap_mode = 2
 
 [node name="Score" type="Sprite2D" parent="CanvasLayer/Panel"]
-position = Vector2(444, 227)
-scale = Vector2(1.32812, 1.3125)
-texture = ExtResource("4_k5bhw")
+position = Vector2(447, 230)
+scale = Vector2(2.03906, 2.01508)
+texture = ExtResource("3_mo8c8")
 
 [node name="ScoreNo" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 0

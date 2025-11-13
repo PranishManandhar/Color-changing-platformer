@@ -1,17 +1,95 @@
-[gd_scene load_steps=8 format=3 uid="uid://d26l5451ey7by"]
+[gd_scene load_steps=16 format=3 uid="uid://d26l5451ey7by"]
 
-[ext_resource type="PackedScene" uid="uid://t6g22c1q0kb8" path="res://scenes/prefabs/player.tscn" id="1_6bfrh"]
-[ext_resource type="PackedScene" uid="uid://cr1cmtl3pk44e" path="res://scenes/prefabs/flags/flag_pole_end.tscn" id="1_w72do"]
-[ext_resource type="PackedScene" uid="uid://cmvea2mklkfsb" path="res://scenes/prefabs/platforms/platform1.tscn" id="2_6bfrh"]
+[ext_resource type="PackedScene" uid="uid://t6g22c1q0kb8" path="res://scenes/prefabs/Misc/player.tscn" id="1_6bfrh"]
 [ext_resource type="PackedScene" uid="uid://snyb8wpdvljk" path="res://scenes/prefabs/UI/GameUI.tscn" id="2_jnsrf"]
-[ext_resource type="PackedScene" uid="uid://eyr5njghugir" path="res://scenes/prefabs/platforms/platform2.tscn" id="3_jnsrf"]
-[ext_resource type="PackedScene" uid="uid://b5hkk6epxtelb" path="res://scenes/prefabs/platforms/NeutralPlatform.tscn" id="4_4jhhp"]
-[ext_resource type="PackedScene" uid="uid://b7wsfrh3jmh10" path="res://scenes/prefabs/death_trigger.tscn" id="5_jyyxl"]
+[ext_resource type="PackedScene" uid="uid://b5hkk6epxtelb" path="res://scenes/prefabs/platforms/NeutralPlatform.tscn" id="3_w72do"]
+[ext_resource type="PackedScene" uid="uid://cmvea2mklkfsb" path="res://scenes/prefabs/platforms/platform1.tscn" id="4_6bfrh"]
+[ext_resource type="PackedScene" uid="uid://cr1cmtl3pk44e" path="res://scenes/prefabs/flags/flag_pole_end.tscn" id="5_4jhhp"]
+[ext_resource type="PackedScene" uid="uid://eyr5njghugir" path="res://scenes/prefabs/platforms/platform2.tscn" id="5_jnsrf"]
+[ext_resource type="Script" uid="uid://7nxpl27x058" path="res://script/platforms/sliding_platform.gd" id="5_jyyxl"]
+[ext_resource type="PackedScene" uid="uid://b7wsfrh3jmh10" path="res://scenes/prefabs/Misc/death_trigger.tscn" id="6_6bfrh"]
+[ext_resource type="PackedScene" uid="uid://ciuqmj5d6414g" path="res://scenes/prefabs/Misc/coin.tscn" id="9_jyyxl"]
+
+[sub_resource type="Animation" id="Animation_ts7n3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-749, 395)]
+}
+
+[sub_resource type="Animation" id="Animation_jyyxl"]
+resource_name = "UpDownSlider"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.46667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-749, 395), Vector2(-749, 158)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gmr40"]
+_data = {
+&"RESET": SubResource("Animation_ts7n3"),
+&"UpDownSlider": SubResource("Animation_jyyxl")
+}
+
+[sub_resource type="Animation" id="Animation_4jhhp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(934, 127)]
+}
+
+[sub_resource type="Animation" id="Animation_jnsrf"]
+resource_name = "sliding"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(934, 127), Vector2(1527, 127)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jyyxl"]
+_data = {
+&"RESET": SubResource("Animation_4jhhp"),
+&"sliding": SubResource("Animation_jnsrf")
+}
 
 [node name="Lvl2" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_6bfrh")]
-position = Vector2(-978, 401)
+position = Vector2(-1527, 400)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-7, -83)
@@ -22,47 +100,87 @@ offset_top = 19.0
 offset_right = 41.0
 offset_bottom = 19.0
 
-[node name="red_plat" type="Node" parent="."]
+[node name="Red" type="Node" parent="."]
 
-[node name="Platform" parent="red_plat" instance=ExtResource("2_6bfrh")]
-position = Vector2(-585, 362)
+[node name="Platform" parent="Red" instance=ExtResource("4_6bfrh")]
+position = Vector2(-1117, 410)
 
-[node name="Platform3" parent="red_plat" instance=ExtResource("2_6bfrh")]
-position = Vector2(60, 235)
+[node name="Platform2" parent="Red" instance=ExtResource("4_6bfrh")]
+position = Vector2(-746, 487)
 
-[node name="Platform4" parent="red_plat" instance=ExtResource("2_6bfrh")]
-position = Vector2(368, 235)
+[node name="Platform3" parent="Red" instance=ExtResource("4_6bfrh")]
+position = Vector2(-66, 560)
 
-[node name="Platform5" parent="red_plat" instance=ExtResource("2_6bfrh")]
-position = Vector2(678, 315)
+[node name="Platform4" parent="Red" instance=ExtResource("4_6bfrh")]
+position = Vector2(276, 591)
 
-[node name="blue_plat" type="Node" parent="."]
+[node name="Platform5" parent="Red" instance=ExtResource("4_6bfrh")]
+position = Vector2(272, 806)
 
-[node name="Platform2" parent="blue_plat" instance=ExtResource("3_jnsrf")]
-position = Vector2(-254, 300)
+[node name="Platform6" parent="Red" instance=ExtResource("4_6bfrh")]
+position = Vector2(-54, 154)
 
-[node name="Platform6" parent="blue_plat" instance=ExtResource("3_jnsrf")]
-position = Vector2(1008, 375)
+[node name="Platform7" parent="Red" instance=ExtResource("4_6bfrh")]
+position = Vector2(640, 235)
 
-[node name="Platform7" parent="blue_plat" instance=ExtResource("3_jnsrf")]
-position = Vector2(1299, 435)
+[node name="Blue" type="Node" parent="."]
 
-[node name="Platform8" parent="blue_plat" instance=ExtResource("3_jnsrf")]
-position = Vector2(1905, 439)
+[node name="Platform3" parent="Blue" instance=ExtResource("5_jnsrf")]
+position = Vector2(-749, 395)
+script = ExtResource("5_jyyxl")
 
-[node name="Neutral_plat" type="Node" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Blue/Platform3"]
+libraries = {
+&"": SubResource("AnimationLibrary_gmr40")
+}
 
-[node name="NeutralPlatform" parent="Neutral_plat" instance=ExtResource("4_4jhhp")]
-position = Vector2(-903, 429)
+[node name="Platform8" parent="Blue" instance=ExtResource("5_jnsrf")]
+position = Vector2(934, 127)
+script = ExtResource("5_jyyxl")
 
-[node name="NeutralPlatform2" parent="Neutral_plat" instance=ExtResource("4_4jhhp")]
-position = Vector2(1605, 512)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Blue/Platform8"]
+libraries = {
+&"": SubResource("AnimationLibrary_jyyxl")
+}
 
-[node name="NeutralPlatform3" parent="Neutral_plat" instance=ExtResource("4_4jhhp")]
-position = Vector2(2220, 379)
+[node name="Platform7" parent="Blue" instance=ExtResource("5_jnsrf")]
+position = Vector2(302, 151)
 
-[node name="Death-Trigger" parent="." instance=ExtResource("5_jyyxl")]
-position = Vector2(-40, 796)
+[node name="Platform4" parent="Blue" instance=ExtResource("5_jnsrf")]
+position = Vector2(-405, 559)
 
-[node name="FlagPole-End" parent="." instance=ExtResource("1_w72do")]
-position = Vector2(2333, 373)
+[node name="Platform5" parent="Blue" instance=ExtResource("5_jnsrf")]
+position = Vector2(673, 675)
+
+[node name="Platform6" parent="Blue" instance=ExtResource("5_jnsrf")]
+position = Vector2(564, 909)
+
+[node name="FlagPole-End" parent="Blue" instance=ExtResource("5_4jhhp")]
+position = Vector2(2002, 112)
+
+[node name="Neutral" type="Node" parent="."]
+
+[node name="NeutralPlatform" parent="Neutral" instance=ExtResource("3_w72do")]
+position = Vector2(-1475, 413)
+
+[node name="NeutralPlatform2" parent="Neutral" instance=ExtResource("3_w72do")]
+position = Vector2(-396, 156)
+
+[node name="NeutralPlatform3" parent="Neutral" instance=ExtResource("3_w72do")]
+position = Vector2(1889, 127)
+
+[node name="Death-Trigger" parent="." instance=ExtResource("6_6bfrh")]
+position = Vector2(-1452, 1060)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Node" type="Node" parent="."]
+
+[node name="coin" parent="." instance=ExtResource("9_jyyxl")]
+position = Vector2(569, 851)
+
+[node name="coin2" parent="." instance=ExtResource("9_jyyxl")]
+position = Vector2(-63, 503)
+
+[node name="coin3" parent="." instance=ExtResource("9_jyyxl")]
+position = Vector2(643, 177)
