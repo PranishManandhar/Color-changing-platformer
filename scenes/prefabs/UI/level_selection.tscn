@@ -1,18 +1,46 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1nnptm2o8w8b"]
+[gd_scene format=3 uid="uid://d1nnptm2o8w8b"]
 
-[ext_resource type="Script" uid="uid://cuh3mmylo4c5e" path="res://script/level_selection.gd" id="1_8kyig"]
+[ext_resource type="Script" uid="uid://cuh3mmylo4c5e" path="res://script/UI/level_selection.gd" id="1_8kyig"]
 [ext_resource type="FontFile" uid="uid://iypkrxy25ib3" path="res://assets/Jersey15-Regular.ttf" id="1_mci7b"]
-[ext_resource type="Texture2D" uid="uid://2evshiqgkry8" path="res://icon.svg" id="2_1qufy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kyig"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqblj"]
+bg_color = Color(0.32915837, 0.3291584, 0.3291584, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7upql"]
+bg_color = Color(0.45452422, 0.45452428, 0.45452416, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qufy"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_1qufy"]
 font = ExtResource("1_mci7b")
 font_size = 60
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_8kyig"]
-font = ExtResource("1_mci7b")
-font_size = 40
-
-[node name="Level Selection" type="Control"]
+[node name="Level Selection" type="Control" unique_id=42808563]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,214 +51,86 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8kyig")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1556898709]
 
-[node name="title" type="Label" parent="CanvasLayer"]
-offset_left = 268.0
-offset_top = 25.0
-offset_right = 884.0
-offset_bottom = 86.0
+[node name="Back" type="Button" parent="CanvasLayer" unique_id=679991855]
+offset_left = 1013.0
+offset_top = 7.0
+offset_right = 1134.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_8kyig")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qqblj")
+text = "Back"
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1764207763]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 152.0
+offset_top = 123.0
+offset_right = -93.00012
+offset_bottom = -69.451965
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.99440664)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_7upql")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel" unique_id=1642351719]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 59.0
+offset_right = 354.0
+offset_bottom = 154.0
+scale = Vector2(1.0044663, 1)
+theme_override_constants/separation = 11
+
+[node name="lvl 1" type="Button" parent="CanvasLayer/Panel/VBoxContainer" unique_id=193215500]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_font_sizes/font_size = 59
+theme_override_styles/normal = SubResource("StyleBoxFlat_1qufy")
+text = "1"
+
+[node name="lvl 2" type="Button" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1979817919]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_font_sizes/font_size = 59
+theme_override_styles/normal = SubResource("StyleBoxFlat_1qufy")
+text = "2"
+
+[node name="lvl 3" type="Button" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1240670980]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_font_sizes/font_size = 59
+theme_override_styles/normal = SubResource("StyleBoxFlat_1qufy")
+text = "3"
+
+[node name="title" type="Label" parent="CanvasLayer/Panel" unique_id=1447708220]
+layout_mode = 0
+offset_left = 127.0
+offset_top = -101.56811
+offset_right = 743.0
+offset_bottom = -40.568108
 text = "Main Menu"
 label_settings = SubResource("LabelSettings_1qufy")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="lvl 1" type="Button" parent="CanvasLayer"]
-offset_left = 66.0
-offset_top = 115.0
-offset_right = 164.0
-offset_bottom = 198.0
-
-[node name="Label" type="Label" parent="CanvasLayer/lvl 1"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 14.0
-offset_right = 78.0
-offset_bottom = 75.0
-text = "1"
-label_settings = SubResource("LabelSettings_1qufy")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="lvl 2" type="Button" parent="CanvasLayer"]
-offset_left = 220.0
-offset_top = 173.0
-offset_right = 318.0
-offset_bottom = 256.0
-
-[node name="Label" type="Label" parent="CanvasLayer/lvl 2"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 14.0
-offset_right = 78.0
-offset_bottom = 75.0
-text = "2"
-label_settings = SubResource("LabelSettings_1qufy")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="lvl 3" type="Button" parent="CanvasLayer"]
-offset_left = 403.0
-offset_top = 131.0
-offset_right = 501.0
-offset_bottom = 214.0
-
-[node name="Label" type="Label" parent="CanvasLayer/lvl 3"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 14.0
-offset_right = 78.0
-offset_bottom = 75.0
-text = "3"
-label_settings = SubResource("LabelSettings_1qufy")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="lvl 4" type="Button" parent="CanvasLayer"]
-offset_left = 651.0
-offset_top = 171.0
-offset_right = 749.0
-offset_bottom = 254.0
-
-[node name="Label" type="Label" parent="CanvasLayer/lvl 4"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 14.0
-offset_right = 78.0
-offset_bottom = 139.0
-text = "4
-"
-label_settings = SubResource("LabelSettings_1qufy")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="lvl 5" type="Button" parent="CanvasLayer"]
-offset_left = 913.0
-offset_top = 120.0
-offset_right = 1011.0
-offset_bottom = 203.0
-
-[node name="Label" type="Label" parent="CanvasLayer/lvl 5"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 14.0
-offset_right = 78.0
-offset_bottom = 75.0
-text = "5"
-label_settings = SubResource("LabelSettings_1qufy")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="lvl 6" type="Button" parent="CanvasLayer"]
-offset_left = 156.0
-offset_top = 367.0
-offset_right = 254.0
-offset_bottom = 450.0
-
-[node name="Label" type="Label" parent="CanvasLayer/lvl 6"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 14.0
-offset_right = 78.0
-offset_bottom = 75.0
-text = "6"
-label_settings = SubResource("LabelSettings_1qufy")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="lvl 7" type="Button" parent="CanvasLayer"]
-offset_left = 359.0
-offset_top = 522.0
-offset_right = 457.0
-offset_bottom = 605.0
-
-[node name="Label" type="Label" parent="CanvasLayer/lvl 7"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 12.0
-offset_right = 80.0
-offset_bottom = 137.0
-text = "7
-"
-label_settings = SubResource("LabelSettings_1qufy")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="lvl 8" type="Button" parent="CanvasLayer"]
-offset_left = 647.0
-offset_top = 513.0
-offset_right = 745.0
-offset_bottom = 596.0
-
-[node name="Label" type="Label" parent="CanvasLayer/lvl 8"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 14.0
-offset_right = 78.0
-offset_bottom = 75.0
-text = "8
-"
-label_settings = SubResource("LabelSettings_1qufy")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="lvl 9" type="Button" parent="CanvasLayer"]
-offset_left = 851.0
-offset_top = 481.0
-offset_right = 949.0
-offset_bottom = 564.0
-
-[node name="Label" type="Label" parent="CanvasLayer/lvl 9"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 14.0
-offset_right = 78.0
-offset_bottom = 75.0
-text = "9"
-label_settings = SubResource("LabelSettings_1qufy")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="lvl 10" type="Button" parent="CanvasLayer"]
-offset_left = 1004.0
-offset_top = 341.0
-offset_right = 1102.0
-offset_bottom = 424.0
-
-[node name="Label" type="Label" parent="CanvasLayer/lvl 10"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 14.0
-offset_right = 78.0
-offset_bottom = 75.0
-text = "10"
-label_settings = SubResource("LabelSettings_1qufy")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Back" type="Button" parent="CanvasLayer"]
-offset_left = 1013.0
-offset_top = 7.0
-offset_right = 1134.0
-offset_bottom = 75.0
-
-[node name="Label" type="Label" parent="CanvasLayer/Back"]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 12.0
-offset_right = 94.0
-offset_bottom = 60.0
-text = "Back"
-label_settings = SubResource("LabelSettings_8kyig")
-
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(569, 377)
-scale = Vector2(1.49219, 1.44531)
-texture = ExtResource("2_1qufy")
-
-[node name="Timer" type="Timer" parent="."]
-
-[connection signal="pressed" from="CanvasLayer/lvl 1" to="." method="_on_lvl_1_pressed"]
-[connection signal="pressed" from="CanvasLayer/lvl 2" to="." method="_on_lvl_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/lvl 1" to="." method="_on_lvl_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/lvl 2" to="." method="_on_lvl_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/lvl 3" to="." method="_on_lvl_3_pressed"]

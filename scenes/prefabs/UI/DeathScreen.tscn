@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://s1l244c3j514"]
+[gd_scene format=3 uid="uid://s1l244c3j514"]
 
 [ext_resource type="Script" uid="uid://bhecvs02kbgee" path="res://script/UI/death_screen.gd" id="1_mo8c8"]
 [ext_resource type="FontFile" uid="uid://iypkrxy25ib3" path="res://assets/Jersey15-Regular.ttf" id="2_tylaj"]
@@ -26,7 +26,7 @@ outline_color = Color(0, 0, 0, 1)
 font = ExtResource("2_tylaj")
 font_size = 50
 
-[node name="DeathScreen" type="Control"]
+[node name="DeathScreen" type="Control" unique_id=2072815218]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,15 +35,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mo8c8")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=525668737]
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1388902932]
 offset_left = 71.0
 offset_top = 31.0
 offset_right = 1066.0
 offset_bottom = 597.0
 
-[node name="title" type="Label" parent="CanvasLayer/Panel"]
+[node name="title" type="Label" parent="CanvasLayer/Panel" unique_id=246064096]
 layout_mode = 0
 offset_left = 318.0
 offset_top = 19.0
@@ -53,7 +53,7 @@ text = "You Died"
 label_settings = SubResource("LabelSettings_7rktd")
 autowrap_mode = 2
 
-[node name="quote" type="Label" parent="CanvasLayer/Panel"]
+[node name="quote" type="Label" parent="CanvasLayer/Panel" unique_id=1280038310]
 layout_mode = 0
 offset_left = 226.0
 offset_top = 136.0
@@ -63,12 +63,12 @@ text = "\"wisdom ran after you but you were always faster\""
 label_settings = SubResource("LabelSettings_mo8c8")
 autowrap_mode = 2
 
-[node name="Score" type="Sprite2D" parent="CanvasLayer/Panel"]
+[node name="Score" type="Sprite2D" parent="CanvasLayer/Panel" unique_id=1716632689]
 position = Vector2(447, 230)
 scale = Vector2(2.03906, 2.01508)
 texture = ExtResource("3_mo8c8")
 
-[node name="ScoreNo" type="Label" parent="CanvasLayer/Panel"]
+[node name="ScoreNo" type="Label" parent="CanvasLayer/Panel" unique_id=354200887]
 layout_mode = 0
 offset_left = 481.0
 offset_top = 206.0
@@ -78,14 +78,14 @@ text = "1600"
 label_settings = SubResource("LabelSettings_tylaj")
 autowrap_mode = 2
 
-[node name="Retry" type="Button" parent="CanvasLayer/Panel"]
+[node name="Retry" type="Button" parent="CanvasLayer/Panel" unique_id=1243883462]
 layout_mode = 0
 offset_left = 352.0
 offset_top = 278.0
 offset_right = 631.0
 offset_bottom = 358.0
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/Retry"]
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Retry" unique_id=270712606]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 6.0
@@ -97,14 +97,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="give up" type="Button" parent="CanvasLayer/Panel"]
+[node name="give up" type="Button" parent="CanvasLayer/Panel" unique_id=1889384]
 layout_mode = 0
 offset_left = 356.0
 offset_top = 381.0
 offset_right = 635.0
 offset_bottom = 461.0
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/give up"]
+[node name="Label" type="Label" parent="CanvasLayer/Panel/give up" unique_id=1549214914]
 layout_mode = 0
 offset_left = 19.0
 offset_top = -3.0

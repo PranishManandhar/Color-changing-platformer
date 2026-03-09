@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl4qrid33w5wp"]
+[gd_scene format=3 uid="uid://cl4qrid33w5wp"]
 
-[ext_resource type="Script" uid="uid://e5t435w7x3ot" path="res://script/main_menu.gd" id="1_lf4j1"]
+[ext_resource type="Script" uid="uid://e5t435w7x3ot" path="res://script/UI/main_menu.gd" id="1_lf4j1"]
 [ext_resource type="FontFile" uid="uid://iypkrxy25ib3" path="res://assets/Jersey15-Regular.ttf" id="2_lggog"]
-[ext_resource type="Texture2D" uid="uid://cmhst2e3g8ild" path="res://assets/setting.png" id="3_3tok1"]
-[ext_resource type="Texture2D" uid="uid://uhkihqnbubnp" path="res://assets/icons8-about-48.png" id="4_n767m"]
+[ext_resource type="Texture2D" uid="uid://cn7t7h2xjm3av" path="res://assets/back.png" id="2_n767m"]
+[ext_resource type="StyleBox" uid="uid://dd3g8u2kfqds0" path="res://assets/buttonthemes/starttheme.tres" id="3_252db"]
+[ext_resource type="StyleBox" uid="uid://bjuj80t4ls8fu" path="res://assets/buttonthemes/starttheme_hover.tres" id="4_lf4j1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dfk7h"]
+texture = ExtResource("2_n767m")
+modulate_color = Color(0.52510136, 0.52510124, 0.5251016, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_sij0g"]
 font = ExtResource("2_lggog")
@@ -11,69 +16,134 @@ font_size = 70
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_yma1n"]
-font = ExtResource("2_lggog")
-font_size = 60
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="Theme" id="Theme_lf4j1"]
+default_font = ExtResource("2_lggog")
 
-[node name="Main menu" type="Control"]
+[sub_resource type="LabelSettings" id="LabelSettings_n767m"]
+font_size = 50
+outline_size = 14
+outline_color = Color(1, 0.24524, 0.18784568, 1)
+
+[node name="Main menu" type="Control" unique_id=1721479663]
 layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lf4j1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=845250433]
+
+[node name="Background" type="Panel" parent="CanvasLayer" unique_id=1669662961]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_lf4j1")
+theme_override_styles/panel = SubResource("StyleBoxTexture_dfk7h")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Title" type="Label" parent="CanvasLayer"]
-offset_left = 238.0
-offset_top = 85.0
-offset_right = 964.0
-offset_bottom = 156.0
+[node name="Title" type="Label" parent="CanvasLayer" unique_id=2043235001]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 63.0
+offset_top = -258.0
+offset_right = 728.0
+offset_bottom = -187.0
+grow_vertical = 2
 text = "Color changing platform"
 label_settings = SubResource("LabelSettings_sij0g")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Start" type="Button" parent="CanvasLayer"]
-offset_left = 455.0
-offset_top = 292.0
-offset_right = 734.0
-offset_bottom = 412.0
+[node name="options" type="VBoxContainer" parent="CanvasLayer" unique_id=1441771966]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -344.0
+offset_top = -115.0
+offset_right = -35.0
+offset_bottom = 149.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 7
 
-[node name="Label" type="Label" parent="CanvasLayer/Start"]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 6.0
-offset_right = 254.0
-offset_bottom = 110.0
+[node name="Start" type="Button" parent="CanvasLayer/options" unique_id=421748553]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_lf4j1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.92099476, 0.9209945, 0.9209948, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.8656446, 0.84905654, 0.83218515, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("3_252db")
+theme_override_styles/hover = ExtResource("4_lf4j1")
 text = "Start"
-label_settings = SubResource("LabelSettings_yma1n")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
 
-[node name="Settings" type="Button" parent="CanvasLayer"]
-offset_left = 26.0
-offset_top = 571.0
-offset_right = 101.0
-offset_bottom = 632.0
-icon = ExtResource("3_3tok1")
+[node name="Settings" type="Button" parent="CanvasLayer/options" unique_id=1073330088]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_lggog")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("3_252db")
+theme_override_styles/hover = ExtResource("4_lf4j1")
+text = "Settings"
 icon_alignment = 1
 expand_icon = true
 
-[node name="About" type="Button" parent="CanvasLayer"]
-offset_left = 1043.0
-offset_top = 577.0
-offset_right = 1116.0
-offset_bottom = 635.0
-icon = ExtResource("4_n767m")
+[node name="About" type="Button" parent="CanvasLayer/options" unique_id=1664619192]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_lggog")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("3_252db")
+theme_override_styles/hover = ExtResource("4_lf4j1")
+text = "About"
 icon_alignment = 1
+expand_icon = true
 
-[connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="CanvasLayer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="CanvasLayer/About" to="." method="_on_about_pressed"]
+[node name="Exit" type="Button" parent="CanvasLayer/options" unique_id=760253283]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_lggog")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("3_252db")
+theme_override_styles/hover = ExtResource("4_lf4j1")
+text = "Exit"
+icon_alignment = 1
+expand_icon = true
+
+[node name="bottomLabel" type="Panel" parent="CanvasLayer" unique_id=543605852]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="bottomLabel" type="Label" parent="CanvasLayer/bottomLabel" unique_id=668493149]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -52.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_n767m")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="CanvasLayer/options/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/options/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/options/About" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="CanvasLayer/options/Exit" to="." method="_on_exit_pressed"]

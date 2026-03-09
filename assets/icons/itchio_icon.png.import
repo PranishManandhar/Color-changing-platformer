@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcb7eirnlgrk4"
-path="res://.godot/imported/Enemy.png-c7e4b3d25824aa8dab284d05e46717fd.ctex"
+uid="uid://du1amysmfy0m0"
+path="res://.godot/imported/itchio_icon.png-ea85ac7c7951893506148ad9017205a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemy/Enemy.png"
-dest_files=["res://.godot/imported/Enemy.png-c7e4b3d25824aa8dab284d05e46717fd.ctex"]
+source_file="res://assets/icons/itchio_icon.png"
+dest_files=["res://.godot/imported/itchio_icon.png-ea85ac7c7951893506148ad9017205a5.ctex"]
 
 [params]
 
